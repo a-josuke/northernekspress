@@ -73,6 +73,48 @@
     .loader .loader-icon img {
         width: 130px;
     }
+
+    /* dark gray scrim over hero slides so white text stays readable on light photos */
+    .rs-banner-eleven .rs-banner-bg-thumb::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        inset-inline-start: 0;
+        background-color: rgba(20, 20, 22, 0.7);
+        z-index: 1;
+    }
+
+    /* floor the slide height so the swiper's auto-height doesn't jump between slides
+       whose title/description text wraps to different numbers of lines */
+    .rs-banner-eleven .rs-banner-item-wrapper {
+        min-height: 1000px;
+    }
+
+    @media only screen and (max-width: 1600px) {
+        .rs-banner-eleven .rs-banner-item-wrapper {
+            min-height: 1120px;
+        }
+    }
+
+    @media only screen and (max-width: 1199px) {
+        .rs-banner-eleven .rs-banner-item-wrapper {
+            min-height: 870px;
+        }
+    }
+
+    @media only screen and (max-width: 991px) {
+        .rs-banner-eleven .rs-banner-item-wrapper {
+            min-height: 600px;
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        .rs-banner-eleven .rs-banner-item-wrapper {
+            min-height: 660px;
+        }
+    }
 </style>
 
 <body class="rs-smoother-yes">
@@ -446,7 +488,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="rs-banner-item-wrapper">
-                                <div class="rs-banner-bg-thumb" data-background="assets/images/bg/banner-bg-18.png">
+                                <div class="rs-banner-bg-thumb" data-background="assets/images/portfolio/timbermillings.webp">
                                 </div>
                                 <div class="container">
                                     <div class="row">
@@ -491,7 +533,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="rs-banner-item-wrapper">
-                                <div class="rs-banner-bg-thumb" data-background="assets/images/bg/banner-bg-19.png">
+                                <div class="rs-banner-bg-thumb" data-background="assets/images/services/timbermilling-s3.jpg">
                                 </div>
                                 <div class="container">
                                     <div class="row">
@@ -810,11 +852,10 @@
                     <div class="col-xl-7 col-lg-7 col-md-8 col-sm-10">
                         <div class="rs-section-title-wrapper text-center">
                             <span class="rs-section-subtitle has-theme-deep-blue">
-                                What We Do
+                                How We Work
                             </span>
-                            <h2 class="rs-section-title rs-split-text-enable split-in-fade">We provide our services all
-                                over
-                                world</h2>
+                            <h2 class="rs-section-title rs-split-text-enable split-in-fade">Our Timber
+                                Milling Process</h2>
                         </div>
                     </div>
                 </div>
@@ -828,7 +869,7 @@
                                         <button class="nav-link active" id="pills-item-four-tab" data-bs-toggle="pill"
                                             data-bs-target="#pills-item-four" type="button" role="tab"
                                             aria-controls="pills-item-one" aria-selected="true">
-                                            Architecture <span class="rs-services-icon"><svg
+                                            Timber Harvesting <span class="rs-services-icon"><svg
                                                     xmlns="http://www.w3.org/2000/svg" width="51" height="12"
                                                     viewBox="0 0 51 12" fill="none">
                                                     <path
@@ -841,7 +882,7 @@
                                         <span class="rs-services-tab-number">02</span>
                                         <button class="nav-link" id="pills-item-five-tab" data-bs-toggle="pill"
                                             data-bs-target="#pills-item-five" type="button" role="tab"
-                                            aria-controls="pills-item-two" aria-selected="false"> Construction <span
+                                            aria-controls="pills-item-two" aria-selected="false"> Sawmilling &amp; Processing <span
                                                 class="rs-services-icon"><svg xmlns="http://www.w3.org/2000/svg"
                                                     width="51" height="12" viewBox="0 0 51 12" fill="none">
                                                     <path
@@ -855,7 +896,7 @@
                                         <button class="nav-link" id="pills-item-six-tab" data-bs-toggle="pill"
                                             data-bs-target="#pills-item-six" type="button" role="tab"
                                             aria-controls="pills-item-three" aria-selected="false">
-                                            Interior design<span class="rs-services-icon"><svg
+                                            Quality Grading<span class="rs-services-icon"><svg
                                                     xmlns="http://www.w3.org/2000/svg" width="51" height="12"
                                                     viewBox="0 0 51 12" fill="none">
                                                     <path
@@ -869,7 +910,7 @@
                                         <button class="nav-link" id="pills-item-seven-tab" data-bs-toggle="pill"
                                             data-bs-target="#pills-item-seven" type="button" role="tab"
                                             aria-controls="pills-item-four" aria-selected="false">
-                                            Consultancy<span class="rs-services-icon"><svg
+                                            Export Logistics<span class="rs-services-icon"><svg
                                                     xmlns="http://www.w3.org/2000/svg" width="51" height="12"
                                                     viewBox="0 0 51 12" fill="none">
                                                     <path
@@ -887,11 +928,11 @@
                                     aria-labelledby="pills-item-four-tab" tabindex="0">
                                     <div class="rs-services-tab-item">
                                         <div class="rs-services-bg-thumb"
-                                            data-background="assets/images/services/services-thumb-27.png"></div>
+                                            data-background="assets/images/portfolio/timbermillings.webp"></div>
                                         <div class="rs-services-tab-content">
                                             <div class="rs-services-descrip">
-                                                <p> we have been empowering industries and driving progress for over 30
-                                                    years. </p>
+                                                <p> We work with local landowners to responsibly source timber,
+                                                    keeping harvesting sustainable for the long term. </p>
                                             </div>
                                             <div class="rs-services-tab-btn">
                                                 <a class="rs-btn has-theme-deep-blue has-icon has-bg"
@@ -920,11 +961,11 @@
                                     aria-labelledby="pills-item-five-tab" tabindex="0">
                                     <div class="rs-services-tab-item">
                                         <div class="rs-services-bg-thumb"
-                                            data-background="assets/images/services/services-thumb-28.png"></div>
+                                            data-background="assets/images/services/timbermilling-s3.jpg"></div>
                                         <div class="rs-services-tab-content">
                                             <div class="rs-services-descrip">
-                                                <p> we have been empowering industries and driving progress for over 30
-                                                    years. </p>
+                                                <p> Raw logs are milled into sawn timber at our own facility,
+                                                    cutting to the sizes our customers need. </p>
                                             </div>
                                             <div class="rs-services-tab-btn">
                                                 <a class="rs-btn has-theme-deep-blue has-icon has-bg"
@@ -953,11 +994,11 @@
                                     aria-labelledby="pills-item-six-tab" tabindex="0">
                                     <div class="rs-services-tab-item">
                                         <div class="rs-services-bg-thumb"
-                                            data-background="assets/images/services/services-thumb-29.png"></div>
+                                            data-background="assets/images/portfolio/timbermillings.webp"></div>
                                         <div class="rs-services-tab-content">
                                             <div class="rs-services-descrip">
-                                                <p> we have been empowering industries and driving progress for over 30
-                                                    years. </p>
+                                                <p> Every batch of sawn timber is checked for grade and moisture
+                                                    content before it leaves our yard. </p>
                                             </div>
                                             <div class="rs-services-tab-btn">
                                                 <a class="rs-btn has-theme-deep-blue has-icon has-bg"
@@ -986,11 +1027,11 @@
                                     aria-labelledby="pills-item-seven-tab" tabindex="0">
                                     <div class="rs-services-tab-item">
                                         <div class="rs-services-bg-thumb"
-                                            data-background="assets/images/services/services-thumb-30.png"></div>
+                                            data-background="assets/images/services/timbermilling-s3.jpg"></div>
                                         <div class="rs-services-tab-content">
                                             <div class="rs-services-descrip">
-                                                <p> we have been empowering industries and driving progress for over 30
-                                                    years. </p>
+                                                <p> We handle packing and logistics to get finished timber
+                                                    products ready to meet export requirements. </p>
                                             </div>
                                             <div class="rs-services-tab-btn">
                                                 <a class="rs-btn has-theme-deep-blue has-icon has-bg"
@@ -1025,7 +1066,7 @@
 
         <!-- why choose area start -->
         <section class="rs-why-choose-area section-space rs-why-choose-four">
-            <div class="rs-why-choose-bg-thumb" data-background="assets/images/bg/why-choose-bg-02.png">
+            <div class="rs-why-choose-bg-thumb" data-background="assets/images/portfolio/timbermillings.webp">
             </div>
             <div class="container">
                 <div class="row justify-content-end">
@@ -1397,7 +1438,7 @@
         </div>
         <!-- counter area end -->
 
-        <!-- testimonial area start -->
+        <!-- testimonial area (disabled per request - not needed on this page)
         <section class="rs-testimonial-area rs-testimonial-six section-space-top">
             <div class="rs-testimonial-bg-thumb" data-background="assets/images/bg/testimonials-bg-04.png"></div>
             <div class="container">
@@ -1531,7 +1572,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- If we need navigation buttons -->
+                                    If we need navigation buttons
                                     <div class="rs-common-navigation rs-testimonial-navigation">
                                         <button class="swiper-button-prev rs-swiper-btn has-theme-deep-blue"><i
                                                 class="fa-regular fa-arrow-left"></i></button>
@@ -1545,7 +1586,7 @@
                 </div>
             </div>
         </section>
-        <!-- testimonial area end -->
+        testimonial area end -->
 
         <!-- blog area (disabled per request - not needed on this page)
         <section class="rs-blog-area section-space rs-blog-two has-theme-deep-blue">

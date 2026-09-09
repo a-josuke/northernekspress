@@ -73,6 +73,41 @@
     .loader .loader-icon img {
         width: 130px;
     }
+
+    /* dark gray scrim over hero slides so white text stays readable on light photos */
+    .rs-banner-four .rs-banner-bg-thumb::before {
+        background-color: rgba(20, 20, 22, 0.7);
+    }
+
+    /* floor the slide height so the swiper's auto-height doesn't jump between slides
+       whose title/description text wraps to different numbers of lines */
+    .rs-banner-four .rs-banner-item-wrapper {
+        min-height: 1000px;
+    }
+
+    @media only screen and (max-width: 1600px) {
+        .rs-banner-four .rs-banner-item-wrapper {
+            min-height: 1120px;
+        }
+    }
+
+    @media only screen and (max-width: 1199px) {
+        .rs-banner-four .rs-banner-item-wrapper {
+            min-height: 870px;
+        }
+    }
+
+    @media only screen and (max-width: 991px) {
+        .rs-banner-four .rs-banner-item-wrapper {
+            min-height: 600px;
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        .rs-banner-four .rs-banner-item-wrapper {
+            min-height: 660px;
+        }
+    }
 </style>
 
 <body class="rs-smoother-yes">
@@ -432,7 +467,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="rs-banner-item-wrapper">
-                                <div class="rs-banner-bg-thumb" data-background="assets/images/bg/banner-bg-05.png">
+                                <div class="rs-banner-bg-thumb" data-background="assets/images/portfolio/cocoaexport.jpg">
                                 </div>
                                 <div class="container">
                                     <div class="row">
@@ -480,7 +515,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="rs-banner-item-wrapper">
-                                <div class="rs-banner-bg-thumb" data-background="assets/images/bg/banner-bg-06.png">
+                                <div class="rs-banner-bg-thumb" data-background="assets/images/services/agricommo-s4.jpg">
                                 </div>
                                 <div class="container">
                                     <div class="row">
@@ -787,7 +822,7 @@
                             <div class="rs-services-content-wrapper">
                                 <div class="rs-services-item wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1s">
                                     <div class="rs-services-thumb prallax-parent">
-                                        <img data-depth="2" src="assets/images/services/services-thumb-14.png"
+                                        <img data-depth="2" src="assets/images/portfolio/cocoaexport.jpg"
                                             alt="image">
                                     </div>
                                     <div class="rs-services-content">
@@ -821,7 +856,7 @@
                                 </div>
                                 <div class="rs-services-item wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s">
                                     <div class="rs-services-thumb prallax-parent">
-                                        <img data-depth="2" src="assets/images/services/services-thumb-15.png"
+                                        <img data-depth="2" src="assets/images/services/agricommo-s4.jpg"
                                             alt="image">
                                     </div>
                                     <div class="rs-services-content">
@@ -853,7 +888,7 @@
                                 </div>
                                 <div class="rs-services-item wow fadeInUp" data-wow-delay=".7s" data-wow-duration="1s">
                                     <div class="rs-services-thumb prallax-parent">
-                                        <img data-depth="2" src="assets/images/services/services-thumb-16.png"
+                                        <img data-depth="2" src="assets/images/portfolio/cocoaexport.jpg"
                                             alt="image">
                                     </div>
                                     <div class="rs-services-content">
@@ -1444,7 +1479,7 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="rs-progress-wrapper wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="1s">
                             <div class="rs-progress-bg-thumb"
-                                data-background="assets/images/progress/progress-thumb-02.png">
+                                data-background="assets/images/services/agricommo-s4.jpg">
                             </div>
                             <div class="rs-progress-content">
                                 <span class="rs-progress-subtitle">Work With Us </span>
@@ -1651,9 +1686,9 @@
         </section>
         <!-- portfolio area end -->
 
-        <!-- testimonial area start -->
+        <!-- testimonial area (disabled per request - not needed on this page)
         <section class="rs-testimonial-area rs-testimonial-three rs-swiper has-bg-blue">
-            <div class="rs-testimonial-bg-thumb" data-background="assets/images/testimonial/testimonial-thumb-01.png">
+            <div class="rs-testimonial-bg-thumb" data-background="assets/images/portfolio/cocoaexport.jpg">
             </div>
             <div class="rs-testimonial-bg-thumb-two" data-background="assets/images/bg/testimonials-bg-02.png"> </div>
             <div class="container">
@@ -1762,7 +1797,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- If we need navigation buttons -->
+                                    If we need navigation buttons
                                     <div class=" rs-testimonial-navigation">
                                         <button class="swiper-button-prev rs-swiper-btn has-light-red"><i
                                                 class="fa-regular fa-arrow-left"></i></button>
@@ -1777,7 +1812,7 @@
             </div>
 
         </section>
-        <!-- testimonial area end -->
+        testimonial area end -->
 
         <!-- blog area (disabled per request - not needed on this page)
         <section class="rs-blog-area section-space rs-blog-two">
