@@ -133,16 +133,12 @@
         font-weight: 600;
     }
 
-    /* dark overlay behind the "Why Choose Us" section photo so the white
-       heading/tab text stays readable against a real photo */
-    .rs-why-choose-four .rs-why-choose-bg-thumb::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        inset-inline-start: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(20, 20, 22, 0.55);
+    /* "Why Choose Us" section now sits on the light journey.jpg image (no overlay
+       needed) - switch the theme's default white text to dark so it stays readable */
+    .rs-why-choose-four .rs-section-title,
+    .rs-why-choose-four .rs-why-choose-tab-content p,
+    .rs-why-choose-four .rs-why-choose-feature-list ul li {
+        color: #1F1F1F;
     }
 </style>
 
@@ -1099,7 +1095,7 @@
 
         <!-- why choose area start -->
         <section class="rs-why-choose-area section-space rs-why-choose-four">
-            <div class="rs-why-choose-bg-thumb" data-background="assets/images/portfolio/timbermillings.webp">
+            <div class="rs-why-choose-bg-thumb" data-background="assets/images/about/journey.jpg">
             </div>
             <div class="container">
                 <div class="row justify-content-end">
