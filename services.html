@@ -91,6 +91,39 @@
     .rs-category-one.has-theme-orange .rs-section-title {
         color: #1F1F1F;
     }
+
+    /* keep every services card the same height: crop all thumbs to the same
+       ratio as the Road Construction photo, then stretch cards to match
+       regardless of how many lines the title/description wrap to */
+    .rs-services-three .rs-services-thumb {
+        aspect-ratio: 3 / 2;
+    }
+
+    .rs-services-three .rs-services-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .rs-services-three .rs-services-wrapper {
+        height: 100%;
+    }
+
+    .rs-services-three .rs-services-item {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rs-services-three .rs-services-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .rs-services-three .rs-services-btn-wrapper {
+        margin-top: auto;
+    }
 </style>
 </head>
 
