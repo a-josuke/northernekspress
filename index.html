@@ -85,34 +85,11 @@
             background-color: rgba(20, 20, 22, 0.7);
         }
 
-        /* floor the slide height so the swiper's auto-height doesn't jump between slides
-           whose title/description text wraps to different numbers of lines */
+        /* fill exactly one screen on every device (also floors the slide height so the
+           swiper's auto-height doesn't jump between slides with different text lengths) */
         .rs-banner-one .rs-banner-item-wrapper {
-            min-height: 1000px;
-        }
-
-        @media only screen and (max-width: 1600px) {
-            .rs-banner-one .rs-banner-item-wrapper {
-                min-height: 1120px;
-            }
-        }
-
-        @media only screen and (max-width: 1199px) {
-            .rs-banner-one .rs-banner-item-wrapper {
-                min-height: 870px;
-            }
-        }
-
-        @media only screen and (max-width: 991px) {
-            .rs-banner-one .rs-banner-item-wrapper {
-                min-height: 600px;
-            }
-        }
-
-        @media only screen and (max-width: 767px) {
-            .rs-banner-one .rs-banner-item-wrapper {
-                min-height: 660px;
-            }
+            min-height: 100vh;
+            min-height: 100dvh;
         }
 
         /* small gap between the two stacked phone numbers in the rotated hero sidebar */
