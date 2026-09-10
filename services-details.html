@@ -75,6 +75,32 @@
     .loader .loader-icon img {
         width: 130px;
     }
+
+    /* very light overlay behind the breadcrumb photo, just enough to keep title/menu text crisp */
+    .rs-breadcrumb-one .rs-breadcrumb-bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(20, 20, 22, 0.15);
+    }
+
+    /* "Have a project in mind?" sits directly on the photo - darken it and turn the heading white so it stays readable */
+    .widget-cta .sidebar-widget-cta-thumb::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(20, 20, 22, 0.55);
+    }
+
+    .widget-cta .sidebar-widget-title {
+        color: #ffffff;
+    }
 </style>
 </head>
 
@@ -425,7 +451,7 @@
 
         <!-- breadcrumb area start -->
         <section class="rs-breadcrumb-area rs-breadcrumb-one p-relative">
-            <div class="rs-breadcrumb-bg" data-background="assets/images/bg/breadcrumb-bg-01.png"></div>
+            <div class="rs-breadcrumb-bg" data-background="assets/images/breadcrum/breadcrum.jpg"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xxl-6 col-xl-8 col-lg-8">
@@ -456,7 +482,7 @@
                     <div class="col-xl-8 col-lg-8">
                         <div class="rs-services-details-wrapper">
                             <div class="rs-services-details-thumb">
-                                <img src="assets/images/services/roadconstruction-s1.jpg" alt="Road Construction & Rehabilitation">
+                                <img src="assets/images/client-photos/nel-roadside-community-01.jpeg" alt="Road Construction & Rehabilitation">
                             </div>
                             <h3 class="rs-services-details-title">Road Construction &amp; Rehabilitation</h3>
                             <p class="mb-25 mt-15"><strong>Northern Ekspress Limited handles the construction,
@@ -633,7 +659,7 @@
                                     </div>
                                 </div>
                                 <div class="rs-services-details-cta-thumb">
-                                    <img src="assets/images/portfolio/roadconstruction.jpg" alt="Road Construction & Rehabilitation">
+                                    <img src="assets/images/client-photos/nel-fleet-lineup-03.jpeg" alt="Road Construction & Rehabilitation">
                                 </div>
                             </div>
                         </div>
@@ -671,7 +697,7 @@
                                 </ul>
                             </div>
                             <div class="sidebar-widget widget-cta mb-30">
-                                <div class="sidebar-widget-cta-thumb" data-background="assets/images/portfolio/roadconstruction.jpg">
+                                <div class="sidebar-widget-cta-thumb" data-background="assets/images/client-photos/nel-truck-backhoe-village.jpeg">
                                 </div>
                                 <div class="sidebar-widget-content">
                                     <h3 class="sidebar-widget-title has-large has-border">Have a <br> project in <br>
