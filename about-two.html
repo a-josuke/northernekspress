@@ -112,6 +112,17 @@
                 width: auto;
             }
         }
+
+        /* dark overlay behind the breadcrumb photo so the white title/menu text stays readable */
+        .rs-breadcrumb-one .rs-breadcrumb-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(20, 20, 22, 0.45);
+        }
     </style>
 </head>
 
@@ -458,7 +469,7 @@
 
         <!-- breadcrumb area start -->
         <section class="rs-breadcrumb-area rs-breadcrumb-one p-relative">
-            <div class="rs-breadcrumb-bg" data-background="assets/images/bg/breadcrumb-bg-01.png"></div>
+            <div class="rs-breadcrumb-bg" data-background="assets/images/breadcrum/breadcrum.jpg"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xxl-6 col-xl-8 col-lg-8">
