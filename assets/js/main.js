@@ -909,38 +909,7 @@ Sidebar Toggle
         },
     });
 
-    // Contact Form Activation
-    var form = $('#contact-form');
-    var formMessages = $('#form-messages');
-    $(form).submit(function (e) {
-        e.preventDefault();
-        var formData = $(form).serialize();
-        $.ajax({
-            type: 'POST',
-            url: $(form).attr('action'),
-            data: formData
-        })
-            .done(function (response) {
-                $(formMessages).removeClass('error');
-                $(formMessages).addClass('success');
-                $(formMessages).text(response);
-                $('#name, #email, #message').val('');
-                if ($('#phone').length) $('#phone').val('');
-                if ($('#website').length) $('#website').val('');
-                if ($('#subject').length) $('#subject').val('');
-                if ($('#date').length) $('#date').val('');
-                if ($('#time').length) $('#time').val('');
-            })
-            .fail(function (data) {
-                $(formMessages).removeClass('success');
-                $(formMessages).addClass('error');
-                if (data.responseText !== '') {
-                    $(formMessages).text(data.responseText);
-                } else {
-                    $(formMessages).text('Oops! An error occurred and your message could not be sent.');
-                }
-            });
-    });
+    // Contact form submission is handled by assets/js/vendor/ajax-form.js
 
 })(jQuery);
 

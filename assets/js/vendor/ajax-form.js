@@ -4,32 +4,43 @@ $(function() {
 	var form = $('#contact-form');
 
 	// Get the messages div.
-	var formMessages = $('.ajax-response');
+	var formMessages = $('#form-messages');
 
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
 		// Stop the browser from submitting the form.
 		e.preventDefault();
 
+		// Honeypot field - if a bot filled this in, silently pretend it worked.
+		if ($(form).find('input[name="_honey"]').val()) {
+			$(formMessages).removeClass('error').addClass('success');
+			$(formMessages).text('Thank You! Your message has been sent.');
+			$('#contact-form input,#contact-form textarea').val('');
+			return;
+		}
+
 		// Serialize the form data.
 		var formData = $(form).serialize();
 
-		// Submit the form using AJAX.
+		// Submit the form using AJAX (FormSubmit.co returns { success, message } as JSON).
 		$.ajax({
 			type: 'POST',
 			url: $(form).attr('action'),
-			data: formData
+			data: formData,
+			dataType: 'json'
 		})
 		.done(function(response) {
-			// Make sure that the formMessages div has the 'success' class.
-			$(formMessages).removeClass('error');
-			$(formMessages).addClass('success');
+			var message = (response && response.message) ? response.message : 'Thank You! Your message has been sent.';
+			var succeeded = !response || response.success !== 'false';
 
-			// Set the message text.
-			$(formMessages).text(response);
+			$(formMessages).removeClass(succeeded ? 'error' : 'success');
+			$(formMessages).addClass(succeeded ? 'success' : 'error');
+			$(formMessages).text(message);
 
-			// Clear the form.
-			$('#contact-form input,#contact-form textarea').val('');
+			if (succeeded) {
+				// Clear the form.
+				$('#contact-form input,#contact-form textarea').val('');
+			}
 		})
 		.fail(function(data) {
 			// Make sure that the formMessages div has the 'error' class.
@@ -37,7 +48,9 @@ $(function() {
 			$(formMessages).addClass('error');
 
 			// Set the message text.
-			if (data.responseText !== '') {
+			if (data.responseJSON && data.responseJSON.message) {
+				$(formMessages).text(data.responseJSON.message);
+			} else if (data.responseText) {
 				$(formMessages).text(data.responseText);
 			} else {
 				$(formMessages).text('Please complete the form and try again');

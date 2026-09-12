@@ -31207,4 +31207,16 @@ a.ui-button:active {
   box-shadow: 0 0 5px #666;
 }
 
+/* contact form submission feedback (set by assets/js/vendor/ajax-form.js) */
+#form-messages {
+  margin-top: 15px;
+  font-weight: 500;
+}
+#form-messages.success {
+  color: #1a7d3d;
+}
+#form-messages.error {
+  color: #d93025;
+}
+
 /*# sourceMappingURL=main.css.map */
