@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
+<head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="template-version" content="1.0.8">
@@ -108,7 +109,18 @@
             min-height: 660px;
         }
     }
+
+    /* "Our Awesome Services" right-side image: confine it to the section's
+       right margin (instead of the full width) so a real photo can use
+       background-size: cover without ever sitting underneath the white text */
+    .rs-services-four .rs-services-bg-thumb {
+        inset-inline-end: 0;
+        width: 30%;
+        background-position: left center;
+        background-size: cover;
+    }
 </style>
+</head>
 
 <body class="rs-smoother-yes">
 
@@ -807,7 +819,7 @@
 
         <!-- services area start -->
         <section class="rs-servcies-area rs-services-four">
-            <div class="rs-services-bg-thumb" data-background="assets/images/bg/services-bg-02.png"></div>
+            <div class="rs-services-bg-thumb" data-background="assets/images/portfolio/cocoaexport.jpg"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xxl-8 col-xl-7 col-lg-8 col-md-9">
