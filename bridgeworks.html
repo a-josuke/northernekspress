@@ -23,6 +23,18 @@
     <link rel="stylesheet" href="assets/css/vendor/remixicon.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <style>
+        /* Keep the Recent Work carousel cards aligned despite mixed image dimensions. */
+        .bridgeworks-portfolio .rs-portfolio-thumb {
+            aspect-ratio: 6 / 5;
+        }
+
+        .bridgeworks-portfolio .rs-portfolio-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    <style>
         /* demo-only RTL/LTR template settings widget - not needed on the live site */
         .rs-theme-settings-area {
             display: none !important;
@@ -1611,7 +1623,7 @@
 
         <!-- portfolio area start -->
         <section
-            class="rs-portfolio-area section-space rs-portfolio-four rs-portfolio-tooltip rs-swiper has-theme-medium-yellow">
+            class="rs-portfolio-area section-space rs-portfolio-four rs-portfolio-tooltip rs-swiper has-theme-medium-yellow bridgeworks-portfolio">
             <div class="container">
                 <div class="row  g-5 section-title-space align-items-end">
                     <div class="col-xl-8 col-lg-8">
@@ -1639,7 +1651,7 @@
                     <div class="rs-portfolio-slider-wrapper">
                         <div class="swiper" data-clone-slides="false" data-loop="true" data-speed="2000"
                             data-autoplay="true" data-dots-dynamic="false" data-hover-pause="true" data-effect="false"
-                            data-delay="3000" data-item="4" data-item-xl="3" data-item-lg="3" data-item-md="2"
+                            data-delay="3000" data-item="3" data-item-xl="3" data-item-lg="3" data-item-md="2"
                             data-item-sm="1" data-item-xs="1" data-item-mobile="1" data-margin="30" data-margin-xl="30"
                             data-margin-lg="30" data-margin-md="30" data-margin-sm="30" data-margin-xs="30"
                             data-margin-mobile="30">
@@ -1651,7 +1663,7 @@
                                             <div class="rs-portfolio-btn-wrapper">
                                                 <div class="rs-portfolio-icon-btn">
                                                     <a class="rs-square-btn has-icon has-theme-medium-yellow"
-                                                        href="portfolio-details.html">
+                                                        href="portfolio-details.html?project=culvert-installation">
                                                         <span class="icon-box">
                                                             <svg class="icon-first" xmlns="http://www.w3.org/2000/svg"
                                                                 width="19" height="12" viewBox="0 0 19 12" fill="none">
@@ -1670,7 +1682,7 @@
                                                 </div>
                                                 <div class="rs-portfolio-text-btn">
                                                     <a class="rs-btn has-theme-medium-yellow"
-                                                        href="portfolio-details.html">Read Details</a>
+                                                        href="portfolio-details.html?project=culvert-installation">Read Details</a>
                                                 </div>
                                             </div>
                                             <div class="rs-portfolio-content rs-portfolio-tooltip-content">
@@ -1687,7 +1699,7 @@
                                             <div class="rs-portfolio-btn-wrapper">
                                                 <div class="rs-portfolio-icon-btn">
                                                     <a class="rs-square-btn has-icon has-theme-medium-yellow"
-                                                        href="portfolio-details.html">
+                                                        href="portfolio-details.html?project=drainage-channel-upgrade">
                                                         <span class="icon-box">
                                                             <svg class="icon-first" xmlns="http://www.w3.org/2000/svg"
                                                                 width="19" height="12" viewBox="0 0 19 12" fill="none">
@@ -1706,7 +1718,7 @@
                                                 </div>
                                                 <div class="rs-portfolio-text-btn">
                                                     <a class="rs-btn has-theme-medium-yellow"
-                                                        href="portfolio-details.html">Read Details</a>
+                                                        href="portfolio-details.html?project=drainage-channel-upgrade">Read Details</a>
                                                 </div>
                                             </div>
                                             <div class="rs-portfolio-content rs-portfolio-tooltip-content">
@@ -1723,7 +1735,7 @@
                                             <div class="rs-portfolio-btn-wrapper">
                                                 <div class="rs-portfolio-icon-btn">
                                                     <a class="rs-square-btn has-icon has-theme-medium-yellow"
-                                                        href="portfolio-details.html">
+                                                        href="portfolio-details.html?project=bridge-access-road-works">
                                                         <span class="icon-box">
                                                             <svg class="icon-first" xmlns="http://www.w3.org/2000/svg"
                                                                 width="19" height="12" viewBox="0 0 19 12" fill="none">
@@ -1742,7 +1754,7 @@
                                                 </div>
                                                 <div class="rs-portfolio-text-btn">
                                                     <a class="rs-btn has-theme-medium-yellow"
-                                                        href="portfolio-details.html">Read Details</a>
+                                                        href="portfolio-details.html?project=bridge-access-road-works">Read Details</a>
                                                 </div>
                                             </div>
                                             <div class="rs-portfolio-content rs-portfolio-tooltip-content">
@@ -1759,7 +1771,7 @@
                                             <div class="rs-portfolio-btn-wrapper">
                                                 <div class="rs-portfolio-icon-btn">
                                                     <a class="rs-square-btn has-icon has-theme-medium-yellow"
-                                                        href="portfolio-details.html">
+                                                        href="portfolio-details.html?project=flood-control-works">
                                                         <span class="icon-box">
                                                             <svg class="icon-first" xmlns="http://www.w3.org/2000/svg"
                                                                 width="19" height="12" viewBox="0 0 19 12" fill="none">
@@ -1778,7 +1790,7 @@
                                                 </div>
                                                 <div class="rs-portfolio-text-btn">
                                                     <a class="rs-btn has-theme-medium-yellow"
-                                                        href="portfolio-details.html">Read Details</a>
+                                                        href="portfolio-details.html?project=flood-control-works">Read Details</a>
                                                 </div>
                                             </div>
                                             <div class="rs-portfolio-content rs-portfolio-tooltip-content">
@@ -1795,7 +1807,7 @@
                                             <div class="rs-portfolio-btn-wrapper">
                                                 <div class="rs-portfolio-icon-btn">
                                                     <a class="rs-square-btn has-icon has-theme-medium-yellow"
-                                                        href="portfolio-details.html">
+                                                        href="portfolio-details.html?project=culvert-replacement">
                                                         <span class="icon-box">
                                                             <svg class="icon-first" xmlns="http://www.w3.org/2000/svg"
                                                                 width="19" height="12" viewBox="0 0 19 12" fill="none">
@@ -1814,7 +1826,7 @@
                                                 </div>
                                                 <div class="rs-portfolio-text-btn">
                                                     <a class="rs-btn has-theme-medium-yellow"
-                                                        href="portfolio-details.html">Read Details</a>
+                                                        href="portfolio-details.html?project=culvert-replacement">Read Details</a>
                                                 </div>
                                             </div>
                                             <div class="rs-portfolio-content rs-portfolio-tooltip-content">
@@ -1831,7 +1843,7 @@
                                             <div class="rs-portfolio-btn-wrapper">
                                                 <div class="rs-portfolio-icon-btn">
                                                     <a class="rs-square-btn has-icon has-theme-medium-yellow"
-                                                        href="portfolio-details.html">
+                                                        href="portfolio-details.html?project=community-drainage">
                                                         <span class="icon-box">
                                                             <svg class="icon-first" xmlns="http://www.w3.org/2000/svg"
                                                                 width="19" height="12" viewBox="0 0 19 12" fill="none">
@@ -1850,7 +1862,7 @@
                                                 </div>
                                                 <div class="rs-portfolio-text-btn">
                                                     <a class="rs-btn has-theme-medium-yellow"
-                                                        href="portfolio-details.html">Read Details</a>
+                                                        href="portfolio-details.html?project=community-drainage">Read Details</a>
                                                 </div>
                                             </div>
                                             <div class="rs-portfolio-content rs-portfolio-tooltip-content">

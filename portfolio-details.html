@@ -86,6 +86,41 @@
             height: 100%;
             background-color: rgba(20, 20, 22, 0.15);
         }
+
+        /* Bridgeworks imagery and contrast treatment for the project enquiry panel. */
+        .sidebar-widget.widget-cta {
+            isolation: isolate;
+            overflow: hidden;
+        }
+
+        .sidebar-widget.widget-cta::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(45, 47, 50, 0.64);
+            z-index: 0;
+        }
+
+        .sidebar-widget.widget-cta .sidebar-widget-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .sidebar-widget.widget-cta .sidebar-widget-title {
+            color: #000;
+        }
+
+        /* Match the lead project photo to the template's original landscape image ratio. */
+        .rs-portfolio-details-wrapper > .rs-portfolio-details-thumb:first-child {
+            aspect-ratio: 1200 / 625;
+            overflow: hidden;
+        }
+
+        .rs-portfolio-details-wrapper > .rs-portfolio-details-thumb:first-child img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -766,7 +801,9 @@
                             </div>
 
                             <div class="sidebar-widget widget-cta mb-30">
-                                <div class="sidebar-widget-cta-thumb" data-background="assets/images/bg/cta-bg-09.png">
+                                <div class="sidebar-widget-cta-thumb"
+                                    data-background="assets/images/services/bridgeworks-s2.jpg"
+                                    style="background-image: url('assets/images/services/bridgeworks-s2.jpg');">
                                 </div>
                                 <div class="sidebar-widget-content">
                                     <h3 class="sidebar-widget-title has-large has-border">Have a <br> project in <br>
@@ -948,6 +985,7 @@
     <script src="assets/js/vendor/purecounter.js"></script>
     <script src="assets/js/vendor/odometer.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/bridgeworks-project-details.js"></script>
 </body>
 
 </html>

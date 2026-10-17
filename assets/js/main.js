@@ -222,10 +222,84 @@ Sidebar Toggle
         });
     });
 
-    //search
+    // Search: a small in-browser index keeps search working on GitHub Pages without a backend.
+    const siteSearchIndex = [
+        { title: "Home", url: "index.html", keywords: "northern ekspress civil works plant hire papua new guinea" },
+        { title: "About Northern Ekspress", url: "about.html", keywords: "company papua new guinean owned civil works equipment" },
+        { title: "Our Services", url: "services.html", keywords: "services road construction bridgeworks drainage agroforestry agriculture" },
+        { title: "Road Construction & Rehabilitation", url: "services.html", keywords: "roads rehabilitation maintenance access roads earthworks" },
+        { title: "Bridgeworks & Drainage Systems", url: "bridgeworks.html", keywords: "culverts drainage channels bridge works flood control access roads" },
+        { title: "Agroforestry", url: "agroforestry.html", keywords: "timber milling processing sustainable forestry" },
+        { title: "Agriculture Commodities Export", url: "commodities-export.html", keywords: "agriculture cocoa export commodities" },
+        { title: "Projects Portfolio", url: "portfolio.html", keywords: "portfolio projects civil works roads bridges drainage" },
+        { title: "Culvert Installation Project", url: "portfolio-details.html?project=culvert-installation", keywords: "culvert drainage road crossing installation" },
+        { title: "Drainage Channel Upgrade", url: "portfolio-details.html?project=drainage-channel-upgrade", keywords: "drainage channel runoff water road upgrade" },
+        { title: "Bridge Access Road Works", url: "portfolio-details.html?project=bridge-access-road-works", keywords: "bridge access road earthworks construction" },
+        { title: "Flood Control Works", url: "portfolio-details.html?project=flood-control-works", keywords: "flood control drainage runoff erosion" },
+        { title: "Culvert Replacement", url: "portfolio-details.html?project=culvert-replacement", keywords: "culvert replacement drainage road" },
+        { title: "Community Drainage Project", url: "portfolio-details.html?project=community-drainage", keywords: "community drainage water access" },
+        { title: "Our Team", url: "team.html", keywords: "team people northern ekspress" },
+        { title: "Contact Us", url: "contact.html", keywords: "contact quote consultation phone email" },
+        { title: "Frequently Asked Questions", url: "faq.html", keywords: "faq questions answers projects services" },
+        { title: "Privacy Policy", url: "privacy-policy.html", keywords: "privacy policy data" },
+        { title: "Terms of Use", url: "terms-of-use.html", keywords: "terms use conditions" }
+    ];
+
+    function getSearchMatches(query) {
+        const terms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
+        if (!terms.length) return [];
+        return siteSearchIndex.filter(function (item) {
+            const searchable = `${item.title} ${item.keywords}`.toLowerCase();
+            return terms.every(function (term) { return searchable.includes(term); });
+        }).slice(0, 6);
+    }
+
+    function renderSearchResults($form, query) {
+        let $results = $form.find('.rs-site-search-results');
+        if (!$results.length) {
+            $results = $('<div class="rs-site-search-results" role="status" aria-live="polite"></div>');
+            $form.append($results);
+        }
+
+        const matches = getSearchMatches(query);
+        $results.empty();
+        if (!query.trim()) {
+            $results.removeClass('is-visible');
+            return;
+        }
+        if (!matches.length) {
+            $results.append($('<p class="rs-site-search-empty">No matching pages found.</p>'));
+        } else {
+            matches.forEach(function (item) {
+                const $link = $('<a class="rs-site-search-result"></a>').attr('href', item.url);
+                $link.append($('<span></span>').text(item.title));
+                $link.append($('<small></small>').text(item.keywords.split(' ').slice(0, 5).join(' · ')));
+                $results.append($link);
+            });
+        }
+        $results.addClass('is-visible');
+    }
+
+    // Search panel toggle
     $('.rs-header-search-icon').on('click', function (event) {
-        $('.rs-stickys-form').slideToggle('show');
+        const $form = $(this).siblings('.rs-stickys-form');
+        $form.slideToggle('show');
         $(this).toggleClass('icon-close');
+    });
+
+    $('.rs-stickys-form').each(function () {
+        const $form = $(this);
+        const $input = $form.find('input[type="text"]');
+        $form.attr('role', 'search');
+        $input.attr('aria-label', 'Search the website').attr('autocomplete', 'off');
+
+        $form.on('submit', function (event) {
+            event.preventDefault();
+            renderSearchResults($form, $input.val());
+        });
+        $input.on('input', function () {
+            renderSearchResults($form, $input.val());
+        });
     });
 
     // tooltip
